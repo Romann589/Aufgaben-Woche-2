@@ -65,5 +65,6 @@ def main() -> None:
     log_debug("Programm beendet.")
 
 
+
 if __name__ == "__main__":
     main()
