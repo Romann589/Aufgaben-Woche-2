@@ -1,5 +1,5 @@
 import customer
-
+import logging
 from pathlib import Path
 
 
@@ -20,12 +20,14 @@ def save_customer_to_txt(customer: customer.Customer) -> None:
 
 def validate_name(name: str) -> str:
     if not name.isalpha():
+        logging.error(f"Ungültiger Name eingegeben: {name}")
         raise ValueError("Der Name darf nur Buchstaben enthalten.")
     return name
 
 
 def validate_age(age_input: str) -> int:
     if not age_input.isdigit():
+        logging.error(f"Ungültiges Alter eingegeben: {age_input}")
         raise ValueError("Das Alter muss eine ganze Zahl sein.")
     return int(age_input)
 
@@ -47,10 +49,13 @@ def new_customer_input() -> customer.Customer:
 
     return add_new_customer(name, age)
 
+
 def main() -> None:
     customer = new_customer_input()
     save_customer_to_txt(customer)
     print_customer_info(customer)
 
+
 if __name__ == "__main__":
+    logging.basicConfig(filename="customer_app.log", level=logging.ERROR)
     main()
