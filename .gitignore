@@ -4,3 +4,5 @@ __pycache__/
 .venv/
 .env
 customers.txt
+customer_app_debug.log
+customer_app_error.log
