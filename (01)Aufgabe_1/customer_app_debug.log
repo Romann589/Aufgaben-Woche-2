@@ -1,0 +1,5 @@
+DEBUG:root:Programm gestartet.
+DEBUG:root:Neuer Customer wird eingegeben.
+DEBUG:root:Customer wird in customers.txt gespeichert.
+DEBUG:root:Customer wird im Terminal ausgegeben.
+DEBUG:root:Programm beendet.
